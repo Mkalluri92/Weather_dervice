@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+
 const data = {
 	"States": {
 		"IL": {
@@ -228,6 +229,7 @@ const data = {
 /* GET home page. */
 router.get('/get_weather_details', function(req, res, next) {
   const cityRequested = req.query.city;
+  console.log(cityRequested);
 
   if(!cityRequested) {
     res.send({'error': 'invalid city name'}, 412);
